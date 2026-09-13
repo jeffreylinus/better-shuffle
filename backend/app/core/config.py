@@ -6,11 +6,16 @@ class Settings(BaseSettings):
 
     api_host: str = "0.0.0.0"
     api_port: int = 8000
-    cors_origins: str = "http://localhost:5173"
+    cors_origins: str = "http://127.0.0.1:5173"
 
     client_id: str
     client_secret: str
-    redirect_uri: str = "http://localhost:8000/callback"
+    redirect_uri: str = "http://127.0.0.1:8000/callback"
+
+    frontend_url: str = "http://127.0.0.1:5173"
+    redis_host: str = "localhost"
+    redis_port: int = 6379
+
 
     @property
     def cors_origin_list(self) -> list[str]:
